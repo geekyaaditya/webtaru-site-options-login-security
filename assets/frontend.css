@@ -1,0 +1,354 @@
+.wtols-logo {
+	height: auto;
+	max-width: 100%;
+}
+
+.wtols-map {
+	overflow: hidden;
+	width: 100%;
+}
+
+.wtols-map iframe {
+	border: 0;
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+.wtols-contact-card {
+	display: grid;
+	gap: 10px;
+}
+
+.wtols-contact-card__item {
+	display: block;
+}
+
+.wtols-social-links {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.wtols-social-links a {
+	align-items: center;
+	display: inline-flex;
+	height: 34px;
+	justify-content: center;
+	text-decoration: none;
+	width: 34px;
+}
+
+/* ── Business hours ── */
+.wtols-hours {
+	line-height: 1.8;
+}
+
+.wtols-hours-table {
+	border-collapse: collapse;
+	width: 100%;
+	max-width: 400px;
+}
+
+.wtols-hours-table td {
+	padding: 6px 12px 6px 0;
+	vertical-align: top;
+}
+
+.wtols-hours-table .wtols-hours-day {
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+.wtols-hours-table .wtols-hours-closed {
+	color: #999;
+	font-style: italic;
+}
+
+.wtols-hours-status {
+	display: inline-block;
+	font-size: 0.85em;
+	font-weight: 600;
+	padding: 3px 10px;
+	border-radius: 3px;
+}
+
+.wtols-hours-status--open {
+	background: #d4edda;
+	color: #155724;
+}
+
+.wtols-hours-status--closed {
+	background: #f8d7da;
+	color: #721c24;
+}
+
+/* ── Custom Styling (V3) ── */
+:root {
+	--wtols-text-color: inherit;
+	--wtols-bg-color: transparent;
+	--wtols-icon-color: inherit;
+}
+
+.wtols-contact-card {
+	color: var(--wtols-text-color);
+	background-color: var(--wtols-bg-color);
+}
+
+.wtols-contact-card i {
+	color: var(--wtols-icon-color);
+}
+
+.wtols-contact-card a {
+	color: var(--wtols-text-color);
+}
+
+/* Pill Style */
+.wtols-contact-card.wtols-style-pill {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+}
+
+.wtols-contact-card.wtols-style-pill .wtols-contact-card__item {
+	background-color: var(--wtols-bg-color, #f1f1f1);
+	color: var(--wtols-text-color, #333);
+	padding: 8px 16px;
+	border-radius: 50px;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.wtols-contact-card.wtols-style-pill .wtols-contact-card__item a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.wtols-contact-card.wtols-style-pill .wtols-contact-card__item i {
+	color: var(--wtols-icon-color, #555);
+}
+
+/* WhatsApp Sticky Widget */
+.wtols-sticky-whatsapp {
+	position: fixed;
+	bottom: 20px;
+	z-index: 9999;
+	width: 60px;
+	height: 60px;
+	background-color: #25d366;
+	color: #fff;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 32px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+	text-decoration: none;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wtols-sticky-whatsapp:hover {
+	transform: scale(1.1);
+	box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+	color: #fff;
+}
+
+.wtols-wa-pos-left { left: 20px; }
+.wtols-wa-pos-right { right: 20px; }
+
+@media (min-width: 769px) {
+	.wtols-wa-display-mobile { display: none !important; }
+}
+@media (max-width: 768px) {
+	.wtols-wa-display-desktop { display: none !important; }
+	.wtols-sticky-whatsapp.wtols-mbb-offset {
+		bottom: 80px;
+	}
+}
+
+/* Rating Widget */
+.wtols-rating-widget {
+	position: fixed;
+	bottom: 20px;
+	left: 20px;
+	z-index: 9998;
+	background: #fff;
+	padding: 10px 15px;
+	border-radius: 4px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	color: #333;
+	font-family: sans-serif;
+	transition: transform 0.2s;
+}
+.wtols-rating-widget:hover {
+	transform: translateY(-3px);
+}
+.wtols-rw-inner {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+.wtols-rw-icon {
+	font-size: 32px;
+}
+.wtols-rw-custom-image {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+}
+.wtols-rw-custom-image img {
+	max-width: 100%;
+	max-height: 100%;
+}
+.wtols-rw-content {
+	display: flex;
+	flex-direction: column;
+}
+.wtols-rw-title {
+	font-weight: 600;
+	font-size: 14px;
+	margin-bottom: 2px;
+	color: #000;
+}
+.wtols-rw-score-wrap {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 14px;
+	font-weight: bold;
+}
+.wtols-rw-stars {
+	color: #fbbc05;
+	font-size: 12px;
+}
+@media (min-width: 769px) {
+	.wtols-rw-display-mobile { display: none !important; }
+}
+@media (max-width: 768px) {
+	.wtols-rw-display-desktop { display: none !important; }
+	.wtols-rating-widget.wtols-mbb-offset {
+		bottom: 80px;
+	}
+}
+
+/* Back to Top */
+.wtols-back-to-top {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 9997;
+	width: 45px;
+	height: 45px;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+	text-decoration: none;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s;
+}
+.wtols-back-to-top.wtols-btt-visible {
+	opacity: 1;
+	visibility: visible;
+}
+.wtols-back-to-top:hover {
+	opacity: 0.8;
+	color: #fff;
+}
+.wtols-btt-circle {
+	border-radius: 50%;
+}
+.wtols-btt-square {
+	border-radius: 4px;
+}
+@media (min-width: 769px) {
+	.wtols-btt-display-mobile { display: none !important; }
+}
+@media (max-width: 768px) {
+	.wtols-btt-display-desktop { display: none !important; }
+	.wtols-back-to-top.wtols-mbb-offset {
+		bottom: 80px;
+	}
+}
+
+/* Mobile Bottom Bar */
+.wtols-mobile-bottom-bar {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10000;
+	display: flex;
+	box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+.wtols-mbb-btn {
+	flex: 1;
+	padding: 15px 10px;
+	text-align: center;
+	color: #fff;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 16px;
+	transition: opacity 0.2s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.wtols-mbb-btn:hover {
+	opacity: 0.9;
+	color: #fff;
+}
+@media (min-width: 769px) {
+	.wtols-mobile-bottom-bar {
+		display: none !important;
+	}
+}
+
+/* Sticky Vertical Button */
+.wtols-sticky-vertical-btn {
+	position: fixed;
+	right: 0;
+	transform: translateY(-50%);
+	z-index: 9996;
+	box-shadow: -2px 0 10px rgba(0,0,0,0.15);
+	border-radius: 8px 0 0 8px;
+	transition: right 0.3s ease;
+}
+
+.wtols-sticky-vertical-btn-inner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 15px 8px;
+	text-decoration: none;
+	color: inherit;
+	gap: 10px;
+}
+
+.wtols-sticky-vertical-btn-inner:hover {
+	opacity: 0.9;
+	color: inherit;
+}
+
+.wtols-sticky-vertical-btn i {
+	font-size: 20px;
+}
+
+.wtols-sticky-vertical-btn-text {
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+	font-weight: 600;
+	letter-spacing: 1px;
+	font-size: 14px;
+	transform: rotate(180deg); /* Optional, depending on reading direction preference */
+}

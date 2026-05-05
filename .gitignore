@@ -1,0 +1,24 @@
+# OS Files
+.DS_Store
+Thumbs.db
+
+# WordPress Files
+wp-config.php
+wp-content/uploads/
+wp-content/blogs.dir/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/cache/
+wp-content/cache/supercache/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+
+# Plugin Specific
+/scratch/
+node_modules/
+.git/
+.svn/
+*.log
+*.tmp
+*.bak
+*.swp

@@ -1,0 +1,616 @@
+/* ── Variables & Reset ── */
+:root {
+	--wtols-primary: #2271b1;
+	--wtols-primary-dark: #135e96;
+	--wtols-bg: #f0f2f5;
+	--wtols-sidebar-bg: #ffffff;
+	--wtols-border: #dcdcde;
+	--wtols-text: #1d2327;
+	--wtols-text-muted: #50575e;
+	--wtols-radius: 8px;
+	--wtols-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.wtols-wrap {
+	margin: 20px 20px 0 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+/* ── Page Header ── */
+.wtols-page-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 24px;
+	padding: 0 4px;
+}
+
+.wtols-page-header h1 {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	font-size: 24px;
+	font-weight: 700;
+	margin: 0;
+	color: var(--wtols-text);
+}
+
+.wtols-header-logo {
+	width: 32px;
+	height: 32px;
+	border-radius: 6px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.wtols-hide-header-icon .wtols-header-logo,
+.wtols-hide-header-icon #icon-options-general,
+.wtols-hide-header-icon .icon32,
+.wtols-hide-header-icon h1:before {
+	display: none !important;
+}
+
+.wtols-save-top {
+	padding: 8px 24px !important;
+	font-size: 14px !important;
+	font-weight: 600 !important;
+	height: auto !important;
+	border-radius: var(--wtols-radius) !important;
+}
+
+.wtols-button-danger {
+	background: #d32f2f !important;
+	border-color: #d32f2f !important;
+	color: #fff !important;
+	padding: 8px 16px !important;
+	height: auto !important;
+	font-weight: 600 !important;
+	border-radius: 6px !important;
+	transition: background 0.2s ease !important;
+	text-decoration: none !important;
+}
+
+.wtols-button-danger:hover {
+	background: #b71c1c !important;
+	border-color: #b71c1c !important;
+	color: #fff !important;
+}
+
+/* ── Layout ── */
+.wtols-admin-layout {
+	display: flex;
+	gap: 24px;
+	align-items: flex-start;
+}
+
+/* ── Sidebar Navigation ── */
+.wtols-sidebar-nav {
+	width: 260px;
+	flex-shrink: 0;
+	background: var(--wtols-sidebar-bg);
+	border: 1px solid var(--wtols-border);
+	border-radius: var(--wtols-radius);
+	padding: 12px;
+	box-shadow: var(--wtols-shadow);
+	position: sticky;
+	top: 50px;
+}
+
+.wtols-tab {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 12px 16px;
+	color: var(--wtols-text-muted);
+	text-decoration: none;
+	border-radius: 6px;
+	font-weight: 500;
+	transition: all 0.2s ease;
+	cursor: pointer;
+	margin-bottom: 4px;
+}
+
+.wtols-tab:hover {
+	background: #f6f7f7;
+	color: var(--wtols-primary);
+}
+
+.wtols-tab .dashicons {
+	font-size: 20px;
+	width: 20px;
+	height: 20px;
+	transition: transform 0.2s ease;
+}
+
+.wtols-tab:hover .dashicons {
+	transform: scale(1.1);
+}
+
+.wtols-tab--active {
+	background: var(--wtols-primary) !important;
+	color: #fff !important;
+	box-shadow: 0 4px 12px rgba(34, 113, 177, 0.2);
+}
+
+.wtols-tab--active .dashicons {
+	color: #fff;
+}
+
+/* ── Sidebar Shortcodes ── */
+.wtols-sidebar-shortcodes {
+	margin-top: 24px;
+	padding-top: 20px;
+	border-top: 1px solid var(--wtols-border);
+}
+
+.wtols-sidebar-shortcodes h3 {
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: var(--wtols-text-muted);
+	margin: 0 0 12px 16px;
+}
+
+.wtols-sidebar-shortcodes p {
+	font-size: 12px;
+	color: #a7aaad;
+	margin: -8px 0 16px 16px;
+}
+
+.wtols-shortcode-list {
+	margin: 0;
+	padding: 0 8px;
+	list-style: none;
+}
+
+.wtols-shortcode-list li {
+	margin-bottom: 8px;
+}
+
+.wtols-shortcode-list code {
+	display: block;
+	padding: 8px 12px;
+	background: #f6f7f7;
+	border: 1px solid var(--wtols-border);
+	border-radius: 4px;
+	font-size: 12px;
+	color: var(--wtols-primary);
+	cursor: pointer;
+	transition: all 0.2s ease;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.wtols-shortcode-list code:hover {
+	background: #fff;
+	border-color: var(--wtols-primary);
+	box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* ── Content Area ── */
+.wtols-content-area {
+	flex-grow: 1;
+	background: #fff;
+	border: 1px solid var(--wtols-border);
+	border-radius: var(--wtols-radius);
+	padding: 32px;
+	box-shadow: var(--wtols-shadow);
+	min-height: 600px;
+}
+
+/* ── Tab Panels ── */
+.wtols-tab-panel {
+	display: none;
+	animation: wtolsFadeIn 0.3s ease-out;
+}
+
+.wtols-tab-panel--active {
+	display: block;
+}
+
+@keyframes wtolsFadeIn {
+	from { opacity: 0; transform: translateY(10px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Form Styling ── */
+.wtols-tab-panel h2 {
+	font-size: 20px;
+	font-weight: 700;
+	margin: 0 0 24px 0;
+	padding-bottom: 16px;
+	border-bottom: 2px solid #f6f7f7;
+	color: var(--wtols-text);
+}
+
+.form-table th {
+	width: 200px;
+	padding: 20px 10px 20px 0;
+	font-weight: 600;
+	color: var(--wtols-text);
+}
+
+.form-table td {
+	padding: 15px 0;
+}
+
+.form-table input[type="text"],
+.form-table input[type="email"],
+.form-table textarea,
+.form-table select {
+	width: 100%;
+	max-width: 500px;
+	padding: 8px 12px;
+	border-radius: 6px;
+	border: 1px solid var(--wtols-border);
+	box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+	transition: border-color 0.2s ease;
+}
+
+.form-table input:focus,
+.form-table textarea:focus {
+	border-color: var(--wtols-primary);
+	box-shadow: 0 0 0 1px var(--wtols-primary);
+	outline: none;
+}
+
+/* ── Section Headings & Accordion ── */
+.wtols-section-row th {
+	padding: 15px 0 5px 0 !important;
+}
+
+.wtols-section-row h2 {
+	margin: 0;
+	font-size: 15px;
+	font-weight: 600;
+	color: var(--wtols-text);
+	background-color: #f6f7f7;
+	border: 1px solid var(--wtols-border);
+	border-radius: 6px;
+	padding: 12px 16px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	cursor: pointer;
+	user-select: none;
+	transition: all 0.2s ease;
+}
+
+.wtols-section-row h2:hover {
+	background-color: #f0f0f1;
+	border-color: #c3c4c7;
+}
+
+.wtols-section-row:not(.wtols-section-closed) h2 {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	background-color: #f6f7f7;
+	border-bottom-color: #f6f7f7;
+	color: var(--wtols-primary);
+}
+
+.wtols-accordion-toggle {
+	transition: transform 0.3s ease;
+	font-size: 18px;
+	width: 18px;
+	height: 18px;
+}
+
+.wtols-section-closed .wtols-accordion-toggle {
+	transform: rotate(-90deg);
+}
+
+/* ── Tab Panel Styling ── */
+.wtols-tab-panel {
+	background: #fff;
+	padding: 10px 30px 30px 30px;
+	border-radius: var(--wtols-radius);
+	border: 1px solid var(--wtols-border);
+	box-shadow: var(--wtols-shadow);
+	animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+	from { opacity: 0; transform: translateY(5px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+.form-table th {
+	width: 240px;
+	padding: 20px 0;
+	border-bottom: 1px solid #f9f9f9;
+}
+
+.form-table td {
+	padding: 15px 0;
+	border-bottom: 1px solid #f9f9f9;
+}
+
+.form-table tr:not(.wtols-section-row):hover th,
+.form-table tr:not(.wtols-section-row):hover td {
+	background: #fafafa;
+}
+
+.form-table tr:not(.wtols-section-row) th,
+.form-table tr:not(.wtols-section-row) td {
+	transition: background 0.2s ease;
+}
+
+/* ── Custom Copy Badge ── */
+.wtols-copied-badge {
+	position: fixed;
+	bottom: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: #2e7d32;
+	color: #fff;
+	padding: 12px 24px;
+	border-radius: 50px;
+	font-weight: 600;
+	box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+	z-index: 9999;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+/* ── Business Hours Grid ── */
+.wtols-hours-grid {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	max-width: 600px;
+	background: #f9f9f9;
+	padding: 20px;
+	border-radius: 8px;
+	border: 1px solid var(--wtols-border);
+}
+
+.wtols-hours-day-row {
+	display: grid;
+	grid-template-columns: 30px 100px 1fr auto 1fr;
+	align-items: center;
+	gap: 12px;
+}
+
+.wtols-sidebar-footer {
+	margin-top: 30px;
+	padding-top: 20px;
+	border-top: 1px solid var(--wtols-border);
+	font-size: 11px;
+	color: var(--wtols-text-muted);
+	text-align: center;
+}
+
+/* ── Social Rows ── */
+.wtols-social-admin {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.wtols-social-row {
+	display: grid;
+	grid-template-columns: 120px 1fr 180px;
+	gap: 12px;
+	align-items: center;
+}
+
+.wtols-custom-social-row {
+	grid-template-columns: 140px 1fr 160px 40px !important;
+}
+
+.wtols-remove-custom-social {
+	color: #d63638 !important;
+	border-color: #d63638 !important;
+	padding: 0 !important;
+	width: 32px;
+	height: 32px;
+	line-height: 30px !important;
+	min-width: auto !important;
+}
+
+/* ── Plugin Management ── */
+.wtols-plugin-management-scroll {
+	border-radius: var(--wtols-radius);
+	border: 1px solid var(--wtols-border);
+	background: #fff;
+}
+
+.wtols-plugin-management-scroll table {
+	border: none;
+	width: 100%;
+}
+
+.wtols-plugin-management-scroll table th,
+.wtols-plugin-management-scroll table td {
+	padding-left: 20px !important;
+}
+
+.wtols-plugin-management-scroll thead th {
+	position: sticky;
+	top: 0;
+	background: #f6f7f7;
+	z-index: 10;
+	box-shadow: 0 1px 0 var(--wtols-border);
+}
+
+/* ── Utilities ── */
+.wtols-utility-actions {
+	display: flex;
+	gap: 12px;
+	margin-top: 12px;
+}
+
+/* ── Security Logs ── */
+.wtols-tab-panel .wp-list-table {
+	border: 1px solid var(--wtols-border);
+	border-radius: 6px;
+	overflow: hidden;
+	box-shadow: none;
+}
+
+.wtols-tab-panel .wp-list-table thead th {
+	background: #f8f9fa;
+	font-weight: 600;
+}
+
+/* ── Code Center & Editors ── */
+.wtols-code-section {
+	margin: 24px 0;
+	padding: 0 4px;
+}
+
+.wtols-code-section h3 {
+	margin-bottom: 12px;
+	font-size: 16px;
+	color: var(--wtols-text);
+}
+
+.wtols-editor-wrapper {
+	position: relative;
+	display: flex;
+	background: #f9f9f9;
+	border: 1px solid #dcdcde;
+	border-radius: 6px;
+	overflow: hidden;
+}
+
+.wtols-line-numbers {
+	width: 40px;
+	padding: 15px 0;
+	background: #f0f0f0;
+	border-right: 1px solid #dcdcde;
+	text-align: center;
+	color: #999;
+	font-family: 'SFMono-Regular', Consolas, monospace;
+	font-size: 12px;
+	line-height: 1.6;
+	user-select: none;
+	overflow: hidden;
+}
+
+.wtols-line-numbers span {
+	display: block;
+}
+
+.wtols-code-textarea {
+	flex: 1;
+	border: none !important;
+	background: transparent !important;
+	box-shadow: none !important;
+	padding: 15px !important;
+	font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;
+	font-size: 13px !important;
+	line-height: 1.6 !important;
+	color: #1d2327 !important;
+	min-height: 250px;
+	resize: vertical;
+	tab-size: 4;
+}
+
+.wtols-code-textarea:focus {
+	outline: none !important;
+}
+
+.wtols-editor-wrapper:focus-within {
+	border-color: var(--wtols-primary);
+	box-shadow: 0 0 0 1px var(--wtols-primary);
+}
+
+.wtols-safe-mode-notice {
+	background: #fff8e1;
+	border-left: 4px solid #ffc107;
+	padding: 12px 16px;
+	margin-bottom: 15px;
+	border-radius: 0 4px 4px 0;
+}
+
+.wtols-safe-mode-notice h4 {
+	margin: 0 0 5px 0;
+	color: #856404;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.wtols-safe-mode-notice p {
+	margin: 0 0 10px 0;
+	font-size: 13px;
+	color: #666;
+}
+
+.wtols-safe-mode-notice code {
+	background: #fff;
+	padding: 4px 8px;
+	border: 1px solid #ffeeba;
+	color: #856404;
+	word-break: break-all;
+}
+
+.wtols-tab-panel textarea.code {
+	font-family: 'SFMono-Regular', Consolas, monospace !important;
+	background: #f9f9f9 !important;
+	padding: 15px !important;
+	border-radius: 6px !important;
+}
+
+/* ── Menu Organizer & Modern Toggles ── */
+.wtols-tab-panel input[type="checkbox"] {
+	appearance: none;
+	-webkit-appearance: none;
+	background-color: #dcdcde;
+	margin: 0 10px 0 0;
+	width: 40px;
+	height: 22px;
+	border-radius: 22px;
+	position: relative;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	transition: background-color 0.3s ease;
+	vertical-align: middle;
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.wtols-tab-panel input[type="checkbox"]:checked {
+	background-color: var(--wtols-primary);
+}
+
+.wtols-tab-panel input[type="checkbox"]::after {
+	content: '';
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: 18px;
+	height: 18px;
+	background-color: white;
+	border-radius: 50%;
+	transition: transform 0.3s ease;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.wtols-tab-panel input[type="checkbox"]:checked::after {
+	transform: translateX(18px);
+}
+
+.wtols-tab-panel label {
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+	.wtols-admin-layout {
+		flex-direction: column;
+	}
+	.wtols-sidebar-nav {
+		width: 100%;
+		position: static;
+	}
+	.wtols-tab {
+		display: inline-flex;
+		margin-right: 8px;
+	}
+}
