@@ -1816,7 +1816,7 @@ class WTOLS_Plugin
 					<?php echo wp_kses_post($this->render_field('email_2', true, 'wtols-contact-card__item')); ?>
 					<?php echo wp_kses_post($this->render_field('fax', false, 'wtols-contact-card__item')); ?>
 					<?php echo wp_kses_post($this->render_field('address', true, 'wtols-contact-card__item')); ?>
-					<?php echo $this->shortcode_social_links(array()); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					<?php echo wp_kses_post($this->shortcode_social_links(array())); ?>
 				</div>
 				<?php
 				return ob_get_clean();
@@ -2233,7 +2233,7 @@ class WTOLS_Plugin
 		if (!empty($specs)) {
 			$schema['openingHoursSpecification'] = $specs;
 		}
-		echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) . '</script>' . "\n";
+		echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) . '</script>' . "\n";
 	}
 
 	/* ──────────────────────────────────────────────
