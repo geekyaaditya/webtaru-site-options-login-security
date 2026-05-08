@@ -4,7 +4,7 @@
  * Description: Securely manage site options, logos, social links, schema.org, and enhance login security with CAPTCHA and custom login URL.
  * Version: 2.3.0
  * Author: Aaditya Sharma
- * Author URI: https://www.aaditya.me/
+ * Author URI: https://profiles.wordpress.org/aadityasharma/
  * Plugin URI: https://github.com/geekyaaditya/webtaru-site-options-login-security
  * Text Domain: webtaru-site-options-login-security
  * Requires at least: 5.8
