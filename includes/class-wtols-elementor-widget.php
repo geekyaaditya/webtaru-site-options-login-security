@@ -104,7 +104,11 @@ class WTOLS_Elementor_Widget extends \Elementor\Widget_Base {
 		);
 
 		if ( isset( $shortcodes[ $type ] ) ) {
-			echo do_shortcode( $shortcodes[ $type ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			if ( 'map' === $type ) {
+				echo do_shortcode( $shortcodes[ $type ] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			} else {
+				echo wp_kses_post( do_shortcode( $shortcodes[ $type ] ) );
+			}
 		}
 	}
 }
