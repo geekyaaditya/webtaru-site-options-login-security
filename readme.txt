@@ -1,5 +1,5 @@
 === Webtaru Site Options and Login Security ===
-Contributors: webtaru, aadityasharma
+Contributors: AadityaSharma
 Tags: security, login, captcha, business hours, elementor
 Requires at least: 5.8
 Tested up to: 6.9
@@ -55,6 +55,17 @@ This plugin supports the following third-party services to enhance site security
 1. Upload the `webtaru-site-options-login-security` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Navigate to **Webtaru Site Options** in your admin menu to configure settings.
+
+
+== Screenshots ==
+
+1. Dashboard overview and contact details.
+2. Floating widgets 
+3. Login protection and brute force settings.
+4. Workflow Utilities have disable Gutenberg, comment etc.
+5. System and backup options.
+
+
 
 == Changelog ==
 = 2.2.6 =
